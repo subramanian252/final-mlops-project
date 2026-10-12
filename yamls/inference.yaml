@@ -6,4 +6,4 @@ spec:
   predictor:
     serviceAccountName: kserve-sa
     sklearn:
-      storageUri: s3://dvc-surya-bucket/models/churn_model.pkl
+      storageUri: s3://dvc-surya-bucket/models/churn_model_v2.pkl
