@@ -3,3 +3,5 @@ models/*.pkl
 __pycache__/
 .dvc/cache
 .dvc/tmp
+yamls/*.yaml
+!yamls/inference.yaml
