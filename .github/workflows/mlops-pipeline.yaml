@@ -42,13 +42,13 @@ jobs:
         
       - name: Push model to S3 directly
         run: |
-          aws s3 cp models/churn_model.pkl s3://dvc-surya-bucket/models/churn_model_v1.pkl
+          aws s3 cp models/churn_model.pkl s3://dvc-surya-bucket/models/churn_model_v2.pkl
           echo "Model pushed to S3 is success"
       
       - name: Update inference.yaml with S3 model path
         run: |
-          MODEL_URI="s3://dvc-surya-bucket/models/churn_model_v1.pkl"
-          sed -i "s|storageUri: .*|storageUri: $MODEL_URI|g" k8s/inference.yaml
+          MODEL_URI="s3://dvc-surya-bucket/models/churn_model_v2.pkl"
+          sed -i "s|storageUri: .*|storageUri: $MODEL_URI|g" yamls/inference.yaml
 
       - name: Commit updated inference.yaml
         run: |
