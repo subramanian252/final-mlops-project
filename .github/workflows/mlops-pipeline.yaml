@@ -5,6 +5,8 @@ on:
     branches:
       - main
 
+
+
 env:
   AWS_REGION: eu-north-1
   S3_BUCKET: dvc-surya-bucket
@@ -12,6 +14,8 @@ env:
 jobs:
   train-and-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  
     steps:
       - name: checkout repository
         uses: actions/checkout@v4
